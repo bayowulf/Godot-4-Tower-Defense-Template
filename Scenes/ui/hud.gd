@@ -1,4 +1,5 @@
 extends Control
+##hud.gd
 
 var next_wait_time := 0
 var waited := 0
@@ -14,6 +15,7 @@ func	 _ready():
 
 func update_hp(newHp, maxHp):
 	%HPLabel.text = "HP: "+str(round(newHp))+"/"+str(round(maxHp))
+	
 
 func update_gold(newGold):
 	%GoldLabel.text = "Gold: "+str(round(newGold))

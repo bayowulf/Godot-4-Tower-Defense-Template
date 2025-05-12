@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://chgwxhrtw1lln"]
+[gd_scene load_steps=9 format=3 uid="uid://chgwxhrtw1lln"]
 
-[ext_resource type="Script" path="res://Scenes/main/main.gd" id="1_22s4b"]
-[ext_resource type="Script" path="res://Scenes/ui/hud.gd" id="2_cy82p"]
+[ext_resource type="Script" uid="uid://iwk6s7j0gun3" path="res://Scenes/main/main.gd" id="1_22s4b"]
+[ext_resource type="Script" uid="uid://bb4edt40pk6ca" path="res://Scenes/ui/hud.gd" id="2_cy82p"]
 [ext_resource type="PackedScene" uid="uid://d0otd33ubv3hq" path="res://Scenes/ui/turretUI/turret_buy_container.tscn" id="3_pljl8"]
-[ext_resource type="Script" path="res://Scenes/ui/turretUI/turrets_panel.gd" id="3_ryupq"]
+[ext_resource type="Script" uid="uid://cgukw1uikennq" path="res://Scenes/ui/turretUI/turrets_panel.gd" id="3_ryupq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brlrh"]
+bg_color = Color(0.711949, 0.579073, 0.328831, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcurd"]
+bg_color = Color(0.436429, 0.674684, 0.340077, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jhlv"]
+bg_color = Color(0.873594, 0.396366, 0.742151, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3x3g"]
+bg_color = Color(0.94447, 0.393898, 0.428863, 1)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_22s4b")
@@ -56,20 +68,24 @@ layout_mode = 2
 [node name="GoldLabel" type="Label" parent="UI/HUD/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_brlrh")
 
 [node name="HPLabel" type="Label" parent="UI/HUD/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_wcurd")
 text = "HP: 20/20"
 
 [node name="WaveLabel" type="Label" parent="UI/HUD/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4jhlv")
 horizontal_alignment = 1
 
 [node name="RemainLabel" type="Label" parent="UI/HUD/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b3x3g")
 horizontal_alignment = 1
 
 [connection signal="timeout" from="UI/HUD/WaveWaitTimer" to="UI/HUD" method="_on_wave_wait_timer_timeout"]
